@@ -36,7 +36,7 @@ router.get('/book-details/:bookId', (req, res, next) => {
     return res.status(404).render('not-found');
   }
   Book.findOne({ _id: bookId })
-    .populate('author')
+    .populate('author') //Specifies paths which should be populated with other documents. Paths are populated after the query executes
     .then(bookFromDB => {
       // console.log('Output for: bookFromDB', bookFromDB);
       if (!bookFromDB) {
