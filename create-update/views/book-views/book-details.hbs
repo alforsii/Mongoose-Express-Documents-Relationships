@@ -1,4 +1,17 @@
+{{!-- 1. --}}
 <h1>Title: {{title}}</h1>
 
 <h3>Description: {{oneBook.description}} </h3>
+<h3>bookId: {{oneBook.id}}</h3>
 <h4>Author: {{oneBook.author.0.name}} {{oneBook.author.0.lastName}} </h4>
+{{!-- 2. --}}
+<p>Add a review</p>
+<form action="/reviews/add?book_id={{oneBook.id}}" method="post">
+    <label for="">User:</label>
+    <input type="text" name="user" />
+
+    <label for="">Comments:</label>
+    <textarea type="text" name="comments"></textarea>
+
+    <button type="submit">ADD</button>
+</form>

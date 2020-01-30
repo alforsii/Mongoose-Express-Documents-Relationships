@@ -117,4 +117,26 @@ router.post('/books/edit/:id', (req, res, next) => {
     });
 });
 
+//********************************************************* */
+//7. Add reviews
+//********************************************************* */
+router.post('/reviews/add', (req, res, next) => {
+  const { user, comments } = req.body;
+  console.log('Output for: req.body', req.body);
+  Book.update(
+    {
+      _id: req.query.book_id,
+    },
+    {
+      $push: { reviews: { user, comments } },
+    }
+  )
+    .then(book => {
+      res.redirect('/add-books');
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
+
 module.exports = router;

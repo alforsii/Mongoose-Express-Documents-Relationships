@@ -7,6 +7,12 @@ const booksSchema = new Schema(
     description: String,
     author: [{ type: Schema.Types.ObjectId, ref: 'Author' }],
     rating: Number,
+    reviews: [
+      {
+        user: String,
+        comments: String,
+      },
+    ],
   },
   {
     timestamps: {
