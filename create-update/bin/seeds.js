@@ -175,7 +175,9 @@ const createAuthors = books.map(book => {
 //   __v: 0
 // }
 
-//2.From created authors make Author modeel
+//2.Using createAuthors(which is author) update books(in this situation update authors object),
+// where we will have authors id refencing to the location,
+// where is the origin of the particular author in Author model
 let updatedBooks = Promise.all(createAuthors)
   .then(authors => {
     return books.map(book => {
