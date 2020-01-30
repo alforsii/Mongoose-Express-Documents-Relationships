@@ -1,0 +1,18 @@
+<h1> {{title}} </h1>
+<h1>Id method link</h1>
+{{#each books}}
+<div>
+    <a href="/book-details/{{this._id}}">{{this.title}} : {{this.author}}</a>
+    <a href="/books/edit/{{this._id}}" class="edit-button">Edit</a>
+</div>
+{{/each}}
+
+
+<h1>query method</h1>
+<h1>BOOKS</h1>
+{{#each books}}
+<p>
+    <a href="/book-details/{{this._id}}">{{this.title}}</a>
+    <a href="/books/edit?book_id={{this._id}}" class="edit-button">EDIT</a>
+</p>
+{{/each}}
