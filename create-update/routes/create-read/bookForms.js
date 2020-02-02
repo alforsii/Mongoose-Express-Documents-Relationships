@@ -118,7 +118,7 @@ router.post('/books/edit/:id', (req, res, next) => {
 });
 
 //********************************************************* */
-//7. Add reviews
+//7. Add reviews into book-details.hbs
 //********************************************************* */
 router.post('/reviews/add', (req, res, next) => {
   const { user, comments } = req.body;
